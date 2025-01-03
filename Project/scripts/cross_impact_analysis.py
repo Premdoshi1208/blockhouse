@@ -3,40 +3,7 @@ from sklearn.impute import SimpleImputer
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
-# from sklearn.metrics import r2_score
 
-# def cross_impact_analysis(ofi_data, trade_data):
-#     """Analyze contemporaneous and lagged cross-impact."""
-#     print("OFI Data Columns after calculation:", ofi_data.columns)
-#     print("Trade Data Columns before merge:", trade_data.columns)
-
-#     # Merge based on both 'timestamp' and 'stock' columns
-#     merged_data = ofi_data.merge(trade_data, on=['timestamp', 'stock'])
-#     print("Merged Data Columns:", merged_data.columns)
-
-#     stocks = merged_data['stock'].unique()
-#     results = {}
-#     for stock in stocks:
-#         stock_data = merged_data[merged_data['stock'] == stock]
-#         X = stock_data[['OFI_1']]  # Replace with desired OFI level
-#         y = stock_data['price_change_y']  # Use 'price_change_y' from trade_data
-        
-#         # Handling missing values by filling NaNs with the mean of the column
-#         imputer = SimpleImputer(strategy='mean')
-#         X_imputed = imputer.fit_transform(X)  # Impute missing values in X
-#         y_imputed = imputer.fit_transform(y.values.reshape(-1, 1))  # Impute missing values in y
-        
-#         # Train the model
-#         model = LinearRegression()
-#         model.fit(X_imputed, y_imputed)
-#         y_pred = model.predict(X_imputed)
-        
-#         results[stock] = {
-#             'r2': r2_score(y_imputed, y_pred),
-#             'coefficients': model.coef_
-#         }
-#     return results
-# visualization.py
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
